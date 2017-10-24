@@ -1,13 +1,6 @@
-#!/bin/bash
-# A simple script
+This sh file gets one paramter by the directory full path name.
+This returns the total number of file entries for all zip files in that directory.
+usage
 
-mydir=$1;
-total=0;
-echo 'finding in '$mydir;
-for file in $1/*.zip
-do
-  info=$( zipinfo $file | grep -o "number of entries.*" | awk -F  ": " '/1/ {print $2}');
-  total=$(( total + info ));
-  echo $info;
-done
-echo 'total:' $total;
+   ./getfile.sh "directoryfullpath"
+   
